@@ -4,7 +4,7 @@
 
 <% @portfolio_items.each do |item| %>
 <!-- [ link_to item.title, portfolio_path(item) => link_to item.title, item ] you can write both of them-->
-  <p><%= link_to item.title, portfolio_path(item) %></p> 
+  <p><%= link_to item.title, portfolio_show_path(item) %></p> 
   <p><%= item.subtitle %></p>
   <p><%= item.body %></p>
   <%= image_tag item.thumb_image unless item.thumb_image.nil? %>
