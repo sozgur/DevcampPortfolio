@@ -1,3 +1,10 @@
+3.times do |topic|
+    Topic.create!(
+        title: "Topic #{topic}"
+        )
+end
+puts "3 Topics created"
+
 10.times do |blog|
   Blog.create!(
     title: "My blog post #{blog}",
@@ -11,7 +18,8 @@
         procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious
         physical exercise, except to obtain some advantage from it? But who has any right to find fault
         with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a
-        pain that produces no resultant pleasure?"
+        pain that produces no resultant pleasure?",
+    topic_id: Topic.last.id
     )
 end
 
@@ -25,10 +33,25 @@ end
 
 puts "5 skills created"
 
-9.times do |portfoloi_item|
+8.times do |portfoloi_item|
   Portfolio.create!(
     title: "Portfolio title: #{portfoloi_item}",
-    subtitle: "My great service",
+    subtitle: "Ruby on Rails",
+    body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
+        sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+        Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
+        nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit
+        in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+        Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    main_image: "https://placehold.it/600x400",
+    thumb_image: "https://placehold.it/350x200"
+    )
+end
+
+1.times do |portfoloi_item|
+  Portfolio.create!(
+    title: "Portfolio title: #{portfoloi_item}",
+    subtitle: "Angular",
     body: "Lorem ipsum dolor sit amet, consectetur adipiscing elit,
         sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
         Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris
