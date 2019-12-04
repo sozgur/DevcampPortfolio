@@ -1,4 +1,5 @@
 class Portfolio < ApplicationRecord
+  include Placeholder
   validates_presence_of :title, :body, :main_image, :thumb_image
 
   #create custom scope with 2 diffirent way
@@ -12,8 +13,8 @@ class Portfolio < ApplicationRecord
 
   def set_defaults
     #this is not overwriting if item is nil then set this main image with ||
-    self.main_image ||= "https://placehold.it/600x400"
-    self.thumb_image ||= "https://placehold.it/350x200"
+    self.main_image ||= Placeholder.image_generator(height: '600', width: '400')
+    self.thumb_image ||= Placeholder.image_generator(height: '350', width: '200')
   end
 
 
