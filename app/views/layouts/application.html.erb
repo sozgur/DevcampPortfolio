@@ -1,9 +1,11 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>DevcampPortfolio</title>
+    <title><%= @page_title %></title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
+
+    <meta name="keywords" content="<%= @seo_keywords %>"/>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
@@ -21,10 +23,17 @@
     <% end %>
     
     <%= yield %>
-
-    <% if session[:source] %>
-      <p>Thank for visiting from <%= session[:source] %></p> 
-    <% end %>
-
+    <br>
+    <footer>
+      <div>
+        <div><%= link_to "Home", root_path %></div>
+        <div><%= link_to "About Me", about_me_path %></div>
+        <div><%= link_to "Contact", contact_path %></div>
+      </div>
+     
+      <% if session[:source] %>
+        <p>Thank for visiting from <%= session[:source] %></p> 
+      <% end %>
+    </footer>
   </body>
 </html>
