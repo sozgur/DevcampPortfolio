@@ -23,17 +23,12 @@
     <% end %>
     
     <%= yield %>
-    <br>
-    <footer>
-      <div>
-        <div><%= link_to "Home", root_path %></div>
-        <div><%= link_to "About Me", about_me_path %></div>
-        <div><%= link_to "Contact", contact_path %></div>
-      </div>
-     
-      <% if session[:source] %>
-        <p>Thank for visiting from <%= session[:source] %></p> 
-      <% end %>
-    </footer>
+
+    <%= render "shared/nav" %>
+      
+    <% if session[:source] %>
+      <p>Thank for visiting from <%= session[:source] %></p> 
+    <% end %>
+
   </body>
 </html>

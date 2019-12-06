@@ -21,19 +21,13 @@
       <%= link_to 'Register', new_user_registration_path %>
       <%= link_to 'Login', new_user_session_path %>
     <% end %>
+
+    <%= render "shared/nav" %>
     
     <%= yield %>
     <br>
-    <footer>
-      <div>
-        <div><%= link_to "Home", root_path %></div>
-        <div><%= link_to "About Me", about_me_path %></div>
-        <div><%= link_to "Contact", contact_path %></div>
-      </div>
-     
       <% if session[:source] %>
         <p>Thank for visiting from <%= session[:source] %></p> 
       <% end %>
-    </footer>
   </body>
 </html>
