@@ -61,3 +61,4 @@ gem 'ostruct', '~> 0.1.0'
 
 gem 'bootstrap', '~> 4.4.1'
 gem 'jquery-rails'
+gem 'petergate', '~> 2.0', '>= 2.0.1'
